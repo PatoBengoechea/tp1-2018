@@ -1,0 +1,15 @@
+<div class="search">
+  <input  [(ngModel)]="filmToSearch"class="form-control mr-sm-2" type="search" placeholder="Search a film" aria-label="Search" autofocus>
+  <button (click)="searchFilm(filmToSearch)"class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</div> 
+<ul class="films" *ngIf="films.length>0">
+<li *ngFor="let f of films" class="card" >
+        <img class="card-img-top" src="{{imgurlbase + f.backdrop_path}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{f.title}}</h5>
+          <p class="card-text">Punctuation: {{f.vote_average}}</p>
+          <p class="card-text">Release Data: {{f.release_date}}</p>
+          <a href="#" class="btn btn-primary">Go to the Film</a>
+        </div>
+</li>
+</ul>
