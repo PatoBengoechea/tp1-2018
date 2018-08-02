@@ -14,6 +14,7 @@ export class BuscarpeliculasComponent implements OnInit {
   films: any ={};
   imgurlbase;
   imgBaseUrl = "http://image.tmdb.org/t/p/w300";
+  film : any;
 
   constructor(private http: HttpClient) { }
 
@@ -31,4 +32,8 @@ export class BuscarpeliculasComponent implements OnInit {
     console.log(this.films);
     this.filmToSearch = "";
   }
+
+  /*searchUnique(id){
+    (this.film.find(f=> f.id == id));
+  }*/
 }
