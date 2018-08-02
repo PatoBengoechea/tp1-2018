@@ -36,4 +36,10 @@ export class BuscarpeliculasComponent implements OnInit {
   /*searchUnique(id){
     (this.film.find(f=> f.id == id));
   }*/
+
+  searchFilmDetails(id_movie){
+    this.http.get('https://api.themoviedb.org/3/movie/' + id_movie + 
+    '?api_key=afbc1995a41f72f35622f748d82068dc&language=en-US').subscribe((response:any)=>
+    this.film = response.results);
+  }
 }
