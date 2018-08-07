@@ -11,7 +11,7 @@ export class BuscarpeliculasComponent implements OnInit {
 
   filmToSearch;
   config: any;
-  films: any ={};
+  films: any = {};
   imgurlbase;
   imgBaseUrl = "http://image.tmdb.org/t/p/w300";
   film : any;
