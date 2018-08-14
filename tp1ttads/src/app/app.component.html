@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>App Component</title>
+  <title>TP1 TTADS 2018</title>
 </head>
 
 <body>
@@ -17,30 +17,35 @@
           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item" (click)="setOption(0)" [class.selected]="option === 0">
+                  <a class="nav-link">Home</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                <li class="nav-item" (click)="setOption(1)" [class.nselected]="option === 1">
+                  <a class="nav-link">Buscar</a>
                 </li>
       
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
+                <li class="nav-item" (click)="setOption(2)" [class.selected]="option === 2">
+                  <a class="nav-link"> Cartelera </a>
                 </li>
               </ul>
             </div>
           </nav>
     
     </div>
-    
-    <div class="content">
-        <app-buscarpeliculas></app-buscarpeliculas>
-        <app-now-playing-movies></app-now-playing-movies>
+
+    <div class="content" *ngIf="option === 0">
+      <app-home></app-home>
+    </div>
+
+    <div class="content" *ngIf="option === 1">
+      <app-buscarpeliculas></app-buscarpeliculas>
+    </div>
+
+    <div class="content" *ngIf="option === 2">
+      <app-now-playing-movies></app-now-playing-movies>
     </div>
     
-    <div class="footer">
-    
-    </div>   
+    <div class="footer"></div>   
   
 </body>
 </html>

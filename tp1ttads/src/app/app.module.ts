@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { BuscarpeliculasComponent } from './buscarpeliculas/buscarpeliculas.component';
 import { HttpClient, HttpClientModule } from '../../node_modules/@angular/common/http';
 import { NowPlayingMoviesComponent } from './now-playing-movies/now-playing-movies.component';
+import { ModalDetallesComponent } from './modal-detalles/modal-detalles.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import { NowPlayingMoviesComponent } from './now-playing-movies/now-playing-movi
     AppComponent,
     BuscarpeliculasComponent,
     NowPlayingMoviesComponent,
+    ModalDetallesComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

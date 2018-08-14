@@ -1,15 +1,15 @@
   <div class="container" *ngIf="nowPlayingMovies.length">
-      <h1>Películas en cartelera</h1>
+      <h1 style="text-align: center">Películas en cartelera</h1>
       <div class="row">
         <div class="col-md-4" *ngFor="let npm of nowPlayingMovies">
-          <h3>>{{npm.title}}</h3>
+          <h3>{{ npm.title }}</h3>
           <div class="thumbnail">
-            <img src="{{imgurlbase + npm.poster_path}}" alt="Lights" style="width:100%">
+            <img *ngIf="npm.poster_path" class="card-img-top" src="{{ imgBaseUrl + imgPosterSize + npm.poster_path }}" alt="Not found">
             <div class="caption">
-              <p><b>Fecha de estreno:</b> {{npm.release_date}}</p>
-              <p><b>Sinopsis:</b> {{npm.overview}}</p>
+              <p><strong>Fecha de estreno: </strong>{{ npm.release_date | uppercase}}</p>
+              <p><strong>Sinopsis: </strong> {{ npm.overview }}</p>
             </div>  
           </div>
         </div>
       </div>
-    </div>
+    </div> 

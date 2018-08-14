@@ -13,8 +13,8 @@ export class BuscarpeliculasComponent implements OnInit {
   config: any;
   films: any = {};
   imgurlbase;
-  imgBaseUrl = "http://image.tmdb.org/t/p/w300";
-  film : any;
+  film: any = {};
+  //idToSearch: number;
 
   constructor(private http: HttpClient) { }
 
@@ -26,20 +26,24 @@ export class BuscarpeliculasComponent implements OnInit {
     this.http.get('https://api.themoviedb.org/3/search/movie?api_key=afbc1995a41f72f35622f748d82068dc&language=en-US&query='+
     filmToSearch+'&page=1&include_adult=false').subscribe((response:any)=>
     this.films = response.results);
-    this.http.get('https://api.themoviedb.org/3/configuration?api_key=afbc1995a41f72f35622f748d82068dc').subscribe((response:any)=>
-    this.config = response.results);
+    this.http.get('https://api.themoviedb.org/3/configuration?api_key=afbc1995a41f72f35622f748d82068dc').subscribe(
+      (response:any) => this.config = response.results
+    );
     this.imgurlbase = "http://image.tmdb.org/t/p/w300";
     console.log(this.films);
     this.filmToSearch = "";
   }
 
-  /*searchUnique(id){
-    (this.film.find(f=> f.id == id));
-  }*/
+  /*
+  showMovieDetails(id: number){
+    this.idToSearch = id;
+  } 
+  */
 
-  searchFilmDetails(id_movie){
-    this.http.get('https://api.themoviedb.org/3/movie/' + id_movie + 
-    '?api_key=afbc1995a41f72f35622f748d82068dc&language=en-US').subscribe((response:any)=>
-    this.film = response.results);
+  buscarDetalles(){
+    this.http.get('https://api.themoviedb.org/3/movie/11?api_key=afbc1995a41f72f35622f748d82068dc&language=en-US').subscribe(
+      (response:any) => this.film = response.results
+    );
+    console.log(this.film);
   }
 }

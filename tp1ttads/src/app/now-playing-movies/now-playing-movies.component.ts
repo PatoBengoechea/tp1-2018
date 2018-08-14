@@ -10,7 +10,9 @@ export class NowPlayingMoviesComponent implements OnInit {
 
   nowPlayingMovies: any = {};
   config: any;
-  imgBaseUrl = "https://image.tmdb.org/t/p/w185";
+  imgBaseUrl;
+  imgPosterSize;
+  apiKey: 'afbc1995a41f72f35622f748d82068dc';
 
   constructor(private http: HttpClient) { }
 
@@ -27,8 +29,9 @@ export class NowPlayingMoviesComponent implements OnInit {
     this.http.get('https://api.themoviedb.org/3/configuration?api_key=afbc1995a41f72f35622f748d82068dc').subscribe(
       (response:any)=>this.config = response.results
     );
-    
-    
+    this.imgBaseUrl="http://image.tmdb.org/t/p/";
+    this.imgPosterSize="w780";
+
   }
 
 }

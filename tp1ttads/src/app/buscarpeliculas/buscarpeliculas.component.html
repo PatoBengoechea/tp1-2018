@@ -4,20 +4,26 @@
 </div> 
 <ul class="films" *ngIf="films.length>0">
 <li *ngFor="let f of films" class="card" >
-        <img class="card-img-top" src="{{imgurlbase + f.backdrop_path}}" alt="Card image cap">
+        <img *ngIf="f.backdrop_path" class="card-img-top" src="{{imgurlbase + f.backdrop_path}}" alt="Not found">
         <div class="card-body">
-          <h5 class="card-title">{{f.title}}</h5>
+          <h5 class="card-title"><strong>{{f.title}}</strong></h5>
           <p class="card-text">Punctuation: {{f.vote_average}}</p>
-          <p class="card-text">Release Data: {{f.release_date}}</p>
+          <p class="card-text">Release Data: {{f.release_date | uppercase}}</p>
 
             <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="searchFilmDetails(f.id)">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="buscarDetalles()">
               Go to the Film
           </button>
         
         </div>
 </li>
 </ul>
+<!--
+  <div>
+  <app-modal-detalles [movie_id]="idToSearch"></app-modal-detalles>
+</div>
+ -->
+
 <!-- Modal -->
 <div class="modal fade" *ngIf="film" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

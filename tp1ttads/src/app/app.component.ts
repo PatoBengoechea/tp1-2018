@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThrowStmt } from '../../node_modules/@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(){
-  const key="afbc1995a41f72f35622f748d82068dc";
-  }
+  
   title = 'app';
+  option: number;
+
+  constructor(){
+    const key="afbc1995a41f72f35622f748d82068dc";
+  }
+
+  setOption(opt: number){
+    this.option = opt;
+  }
 }
