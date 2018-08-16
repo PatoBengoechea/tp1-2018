@@ -1,15 +1,25 @@
   <div class="container" *ngIf="nowPlayingMovies.length">
-      <h1 style="text-align: center">Películas en cartelera</h1>
+      <h1 class="display-4 text-center bg-primary" >Películas en cartelera</h1>
       <div class="row">
-        <div class="col-md-4" *ngFor="let npm of nowPlayingMovies">
-          <h3>{{ npm.title }}</h3>
-          <div class="thumbnail">
-            <img *ngIf="npm.poster_path" class="card-img-top" src="{{ imgBaseUrl + imgPosterSize + npm.poster_path }}" alt="Not found">
-            <div class="caption">
+        <div class="col-4" *ngFor="let npm of nowPlayingMovies">
+          <h3 class="text-muted text-center">{{ npm.title }}</h3>
+          <figure class="figure">
+            <img *ngIf="npm.poster_path" src="{{ imgBaseUrl + imgPosterSize + npm.poster_path }}" 
+            class="figure-img img-fluid rounded w-75" alt="Poster de la película {{npm.title}}.">
+            <figcaption class="figure-caption">
               <p><strong>Fecha de estreno: </strong>{{ npm.release_date | uppercase}}</p>
-              <p><strong>Sinopsis: </strong> {{ npm.overview }}</p>
-            </div>  
+              <p><strong>Sinopsis: </strong>{{ npm.overview }}</p>
+            </figcaption>
+          </figure>
+          <!--
+          <div class="caption">
+            <img *ngIf="npm.poster_path" class="img-thumbnail w-50" src="{{ imgBaseUrl + imgPosterSize + npm.poster_path }}" alt="Not found">
+          </div>          
+          <div class="caption">
+            <p><strong>Fecha de estreno: </strong>{{ npm.release_date | uppercase}}</p>
+            <p><strong>Sinopsis: </strong> {{ npm.overview }}</p>  
           </div>
+          -->
         </div>
       </div>
     </div> 
