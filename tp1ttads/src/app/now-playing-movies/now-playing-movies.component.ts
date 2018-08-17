@@ -13,11 +13,13 @@ export class NowPlayingMoviesComponent implements OnInit {
   imgBaseUrl;
   imgPosterSize;
   apiKey: 'afbc1995a41f72f35622f748d82068dc';
+  dateToday: any;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.searchNowPlayingMovies();
+    this.dateToday = Date.now();
    }
 
   searchNowPlayingMovies() {

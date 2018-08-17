@@ -1,46 +1,60 @@
-<div class="search">
-  <input  [(ngModel)]="filmToSearch" class="form-control mr-sm-2" type="search" placeholder="Search a film" aria-label="Search" autofocus>
-  <button (click)="searchFilm(filmToSearch)" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</div> 
-<ul class="films" *ngIf="films.length>0">
-<li *ngFor="let f of films" class="card" >
-        <img *ngIf="f.backdrop_path" class="card-img-top" src="{{imgurlbase + f.backdrop_path}}" alt="Not found">
-        <div class="card-body">
-          <h5 class="card-title"><strong>{{f.title}}</strong></h5>
-          <p class="card-text">Punctuation: {{f.vote_average}}</p>
-          <p class="card-text">Release Data: {{f.release_date | uppercase}}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Películas</title>
+</head>
 
-            <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="buscarDetalles()">
-              Go to the Film
-          </button>
-        
+<body>
+
+    <div class="jumbotron text-center">
+        <input  [(ngModel)]="filmToSearch" class="form-control mr-sm-2" type="search" placeholder="Search a film" aria-label="Search" autofocus>
+        <button (click)="searchFilm(filmToSearch)" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </div> 
+    <ul class="films" *ngIf="films.length>0">
+        <li *ngFor="let f of films" class="card" >
+                <img *ngIf="f.backdrop_path" class="card-img-top" src="{{imgurlbase + f.backdrop_path}}" alt="Not found">
+                <div class="card-body">
+                  <h5 class="card-title"><strong>{{f.title}}</strong></h5>
+                  <p class="card-text">Punctuation: {{f.vote_average}}</p>
+                  <p class="card-text">Release Date: {{f.release_date | uppercase}}</p>
+      
+                    <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-outline-info btn-block" data-toggle="modal" data-target="#exampleModal" (click)="buscarDetalles()">
+                      Go to the Film
+                  </button>
+                
+                </div>
+        </li>
+    </ul>
+      <!--
+        <div>
+        <app-modal-detalles [movie_id]="idToSearch"></app-modal-detalles>
+      </div>
+       -->
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Score the film!</button>
+            </div>
+          </div>
         </div>
-</li>
-</ul>
-<!--
-  <div>
-  <app-modal-detalles [movie_id]="idToSearch"></app-modal-detalles>
-</div>
- -->
-
-<!-- Modal -->
-<div class="modal fade" *ngIf="film" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{film.title}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Score the film!</button>
-      </div>
-    </div>
-  </div>
-</div>
+  
+</body>
+</html>

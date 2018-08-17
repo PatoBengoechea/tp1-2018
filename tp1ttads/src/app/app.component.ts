@@ -9,7 +9,7 @@ import { ThrowStmt } from '../../node_modules/@angular/compiler';
 export class AppComponent {
   
   title = 'app';
-  option: number;
+  option = 0;
 
   constructor(){
     const key="afbc1995a41f72f35622f748d82068dc";

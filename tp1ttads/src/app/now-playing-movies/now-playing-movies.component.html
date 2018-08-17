@@ -1,25 +1,35 @@
-  <div class="container" *ngIf="nowPlayingMovies.length">
-      <h1 class="display-4 text-center bg-primary" >Películas en cartelera</h1>
-      <div class="row">
-        <div class="col-4" *ngFor="let npm of nowPlayingMovies">
-          <h3 class="text-muted text-center">{{ npm.title }}</h3>
-          <figure class="figure">
-            <img *ngIf="npm.poster_path" src="{{ imgBaseUrl + imgPosterSize + npm.poster_path }}" 
-            class="figure-img img-fluid rounded w-75" alt="Poster de la película {{npm.title}}.">
-            <figcaption class="figure-caption">
-              <p><strong>Fecha de estreno: </strong>{{ npm.release_date | uppercase}}</p>
-              <p><strong>Sinopsis: </strong>{{ npm.overview }}</p>
-            </figcaption>
-          </figure>
-          <!--
-          <div class="caption">
-            <img *ngIf="npm.poster_path" class="img-thumbnail w-50" src="{{ imgBaseUrl + imgPosterSize + npm.poster_path }}" alt="Not found">
-          </div>          
-          <div class="caption">
-            <p><strong>Fecha de estreno: </strong>{{ npm.release_date | uppercase}}</p>
-            <p><strong>Sinopsis: </strong> {{ npm.overview }}</p>  
-          </div>
-          -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cartelera</title>
+  </head>
+
+  <body>
+     <!-- Jumbotron -->
+     <div *ngIf="nowPlayingMovies.length" class="jumbotron text-center">
+        <h1 class="display-4">Películas en cartelera</h1>
+        <p class="lead">Películas en cartelera para el día <strong>{{ dateToday }}</strong></p>
+    </div>
+    <!-- Fin Jumbotron-->
+    <!-- Películas con card-->
+    <div class="row">
+        <div *ngFor="let npm of nowPlayingMovies" class="col-4">
+            <div class="card">
+                <img class="card-img-top mx-auto d-block" src="{{ imgBaseUrl + imgPosterSize + npm.poster_path }}" alt="Poster de la película {{npm.title}}">
+                <div class="card-body">      
+                    <h5 class="card-title text-center">{{ npm.title }}</h5>
+                    <p class="card-text"><strong>Original title: </strong> {{ npm.original_title }}</p>
+                    <p class="card-text"><strong>Popularity: </strong> {{ npm.popularity }}</p>
+                    <p class="card-text"><strong>Release date: </strong> {{ npm.release_date }}</p>
+                    <button class="btn btn-info btn-block">DETAILS</button>
+                </div>     
+            </div>     
         </div>
-      </div>
-    </div> 
+    </div>
+    <!-- Fin Películas -->
+  </body>
+  </html>
+  

@@ -9,28 +9,22 @@
 
 <body>
     <div class="header">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <img src="assets/logofilm.jpg" width="50px" height="40px">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item" (click)="setOption(0)" [class.selected]="option === 0">
-                  <a class="nav-link">Home</a>
-                </li>
-                <li class="nav-item" (click)="setOption(1)" [class.nselected]="option === 1">
-                  <a class="nav-link">Buscar</a>
-                </li>
-      
-                <li class="nav-item" (click)="setOption(2)" [class.selected]="option === 2">
-                  <a class="nav-link"> Cartelera </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-    
+      <!--Barra nav-->
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+          <img src="https://pbs.twimg.com/profile_images/504352126412136448/7rLwIVFT_400x400.png" alt="UTN image" class="navbar-brand" width="50" height="50">
+          <!--Boton responsive de menú "hamburguesa"-->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar content -->
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item" (click)="setOption(0)" [class.active]="option === 0"><a class="nav-link">Home</a></li>
+              <li class="nav-item" (click)="setOption(1)" [class.active]="option === 1"><a class="nav-link">Buscar</a></li>
+              <li class="nav-item" (click)="setOption(2)" [class.active]="option === 2"><a class="nav-link">Cartelera</a></li>
+            </ul>
+          </div>
+      </nav> 
     </div>
 
     <div class="content" *ngIf="option === 0">
@@ -41,7 +35,7 @@
       <app-buscarpeliculas></app-buscarpeliculas>
     </div>
 
-    <div class="content" *ngIf="option === 2">
+    <div class="container" *ngIf="option === 2">
       <app-now-playing-movies></app-now-playing-movies>
     </div>
     
