@@ -22,6 +22,7 @@
               <li class="nav-item" (click)="setOption(0)" [class.active]="option === 0"><a class="nav-link">Home</a></li>
               <li class="nav-item" (click)="setOption(1)" [class.active]="option === 1"><a class="nav-link">Buscar</a></li>
               <li class="nav-item" (click)="setOption(2)" [class.active]="option === 2"><a class="nav-link">Cartelera</a></li>
+              <li class="nav-item" (click)="setOption(3)" [class.active]="option === 3"><a class="nav-link">Populares</a></li>
             </ul>
           </div>
       </nav> 
@@ -37,6 +38,9 @@
 
     <div class="container" *ngIf="option === 2">
       <app-now-playing-movies></app-now-playing-movies>
+    </div>
+    <div class="container" *ngIf="option === 3">
+      <app-popular-movies></app-popular-movies>
     </div>
     
     <div class="footer"></div>   
