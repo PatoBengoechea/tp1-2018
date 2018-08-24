@@ -10,7 +10,7 @@
 <body>
     <div class="header">
       <!--Barra nav-->
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
           <img src="https://pbs.twimg.com/profile_images/504352126412136448/7rLwIVFT_400x400.png" alt="UTN image" class="navbar-brand" width="50" height="50">
           <!--Boton responsive de menú "hamburguesa"-->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@
     <div class="container mt-5" *ngIf="option === 2">
       <app-now-playing-movies></app-now-playing-movies>
     </div>
-    <div class="container" *ngIf="option === 3">
+    <div class="container mt-5" *ngIf="option === 3">
       <app-popular-movies></app-popular-movies>
     </div>
     
