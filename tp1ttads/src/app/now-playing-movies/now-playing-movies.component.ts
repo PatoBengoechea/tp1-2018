@@ -33,7 +33,6 @@ export class NowPlayingMoviesComponent implements OnInit {
     );
     this.imgBaseUrl="http://image.tmdb.org/t/p/";
     this.imgPosterSize="w780";
-
   }
 
 }

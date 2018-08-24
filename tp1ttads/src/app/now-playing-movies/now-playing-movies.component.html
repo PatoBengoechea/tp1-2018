@@ -13,9 +13,9 @@
         <h1 class="display-4">Películas en cartelera</h1>
         <p class="lead">Películas en cartelera para el día <strong>{{ dateToday }}</strong></p>
     </div>
-    <!-- Fin Jumbotron-->
+
     <!-- Películas con card-->
-    <div class="row">
+    <div *ngIf="nowPlayingMovies.length" class="row">
         <div *ngFor="let npm of nowPlayingMovies" class="col-4">
             <div class="card">
                 <img class="card-img-top mx-auto d-block" src="{{ imgBaseUrl + imgPosterSize + npm.poster_path }}" alt="Poster de la película {{npm.title}}">
