@@ -9,6 +9,7 @@ import { HttpClient, HttpClientModule } from '../../node_modules/@angular/common
 import { NowPlayingMoviesComponent } from './now-playing-movies/now-playing-movies.component';
 import { ModalDetallesComponent } from './modal-detalles/modal-detalles.component';
 import { HomeComponent } from './home/home.component';
+import { popularMoviesComponent } from './popular-movies/popular-movies.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { HomeComponent } from './home/home.component';
     NowPlayingMoviesComponent,
     ModalDetallesComponent,
     HomeComponent,
+    popularMoviesComponent,
   ],
   imports: [
     BrowserModule,
