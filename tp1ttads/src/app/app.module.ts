@@ -10,6 +10,7 @@ import { NowPlayingMoviesComponent } from './now-playing-movies/now-playing-movi
 import { ModalDetallesComponent } from './modal-detalles/modal-detalles.component';
 import { HomeComponent } from './home/home.component';
 import { popularMoviesComponent } from './popular-movies/popular-movies.component';
+import { SearchFilmComponent } from './search-film/search-film.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { popularMoviesComponent } from './popular-movies/popular-movies.componen
     ModalDetallesComponent,
     HomeComponent,
     popularMoviesComponent,
+    SearchFilmComponent,
   ],
   imports: [
     BrowserModule,
