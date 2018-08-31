@@ -7,10 +7,11 @@ import { AppComponent } from './app.component';
 import { BuscarpeliculasComponent } from './buscarpeliculas/buscarpeliculas.component';
 import { HttpClient, HttpClientModule } from '../../node_modules/@angular/common/http';
 import { NowPlayingMoviesComponent } from './now-playing-movies/now-playing-movies.component';
-import { ModalDetallesComponent } from './modal-detalles/modal-detalles.component';
 import { HomeComponent } from './home/home.component';
 import { popularMoviesComponent } from './popular-movies/popular-movies.component';
 import { SearchFilmComponent } from './search-film/search-film.component';
+
+import { ApiThemoviedbService } from './api-themoviedb.service';
 
 
 @NgModule({
@@ -18,7 +19,6 @@ import { SearchFilmComponent } from './search-film/search-film.component';
     AppComponent,
     BuscarpeliculasComponent,
     NowPlayingMoviesComponent,
-    ModalDetallesComponent,
     HomeComponent,
     popularMoviesComponent,
     SearchFilmComponent,
@@ -28,7 +28,7 @@ import { SearchFilmComponent } from './search-film/search-film.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ApiThemoviedbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

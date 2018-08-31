@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiThemoviedbService } from '../api-themoviedb.service';
+
 
 @Component({
   selector: 'app-now-playing-movies',
@@ -8,31 +9,25 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NowPlayingMoviesComponent implements OnInit {
 
-  nowPlayingMovies: any = {};
-  config: any;
-  imgBaseUrl;
-  imgPosterSize;
-  apiKey: 'afbc1995a41f72f35622f748d82068dc';
-  dateToday: any;
+  private nowPlayingMovies: any = {};
+  private dateToday: any;
+  private imgBaseURL = "http://image.tmdb.org/t/p/";
+  private imgPosterSize = "w780";
+ 
 
-  constructor(private http: HttpClient) { }
+  constructor(private service: ApiThemoviedbService) { }
 
   ngOnInit() {
     this.searchNowPlayingMovies();
-    this.dateToday = Date.now();
+    this.dateToday = Date.now().toString();
    }
 
-  searchNowPlayingMovies() {
+  searchNowPlayingMovies(): void {
     // Busco peliculas populares
-    this.http.get('https://api.themoviedb.org/3/movie/now_playing?api_key=afbc1995a41f72f35622f748d82068dc&language=en-US&page=1').subscribe(
-      (response:any)=> this.nowPlayingMovies = response.results
-    ); 
+    this.service.searchNowPlayingMovies()
+      .subscribe(data => this.nowPlayingMovies = data);
     // Get configuration para tener los datos de las imagenes
-    this.http.get('https://api.themoviedb.org/3/configuration?api_key=afbc1995a41f72f35622f748d82068dc').subscribe(
-      (response:any)=>this.config = response.results
-    );
-    this.imgBaseUrl="http://image.tmdb.org/t/p/";
-    this.imgPosterSize="w780";
+    
   }
 
 }
