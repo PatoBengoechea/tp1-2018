@@ -9,7 +9,7 @@ import { ApiThemoviedbService } from '../api-themoviedb.service';
 export class popularMoviesComponent implements OnInit {
 
   private popularMovies: any = {};
-  private imgBaseURL = "http://image.tmdb.org/t/p/";
+  private imgBaseUrl = "https://image.tmdb.org/t/p/";
   private imgPosterSize = "w780";
  
 

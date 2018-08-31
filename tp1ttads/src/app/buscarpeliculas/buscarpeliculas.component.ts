@@ -8,9 +8,9 @@ import { ApiThemoviedbService } from '../api-themoviedb.service';
 })
 export class BuscarpeliculasComponent implements OnInit {
 
-  private film: any;
   private films: any = {};
   private filmDetails;
+  private imgurlbase = "https://image.tmdb.org/t/p/w185";
 
   constructor(private service: ApiThemoviedbService) { }
 
@@ -19,7 +19,7 @@ export class BuscarpeliculasComponent implements OnInit {
 
   searchFilm(filmToSearch: string): void{
     this.service.searchFilm(filmToSearch).subscribe((data: any) => this.films = data.results);
-    this.film = "";
+    console.log(this.service);
   }
 
   searchFilmDetails(id: number): void{
