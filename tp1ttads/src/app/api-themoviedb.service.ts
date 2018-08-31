@@ -13,27 +13,31 @@ export class ApiThemoviedbService {
   constructor(private http: HttpClient) { }
 
   searchFilm(film: string) {
-    // STRING: https://api.themoviedb.org/3/search/movie?api_key=afbc1995a41f72f35622f748d82068dc&language=en-US&query='+filmToSearch+'&page=1&include_adult=false
     this.searchURL = this.dominioURL + "/search/movie?" + this.apiKey + this.language + "&query=" + film + "&page=1&include_adult=false";
     return this.http.get(this.searchURL);
   }
 
   searchFilmDetails(id: number) {
-    // STRING: https://api.themoviedb.org/3/movie/' + id + '?api_key=afbc1995a41f72f35622f748d82068dc&language=en-US
     this.searchURL = this.dominioURL + id + "?" + this.apiKey + this.language;
     return this.http.get(this.searchURL);
   }
   
   searchNowPlayingMovies() {
-    //STRING: https://api.themoviedb.org/3/movie/now_playing?api_key=afbc1995a41f72f35622f748d82068dc&language=en-US&page=1
     this.searchURL = this.dominioURL + "/movie/now_playing?" + this.apiKey + this.language + "&page=1";
     return this.http.get(this.searchURL);
   }
 
   searchPopularMovies() {
-    // STRING: https://api.themoviedb.org/3/movie/popular?page=1&language=en-US&api_key=afbc1995a41f72f35622f748d82068dc
     this.searchURL = this.dominioURL + "/movie/popular?page=1" + this.language + this.apiKey;
     return this.http.get(this.searchURL);
+  }
+
+  rateAMovie(id: number, vote: number){
+    let data:any ={};
+    data.value=vote;
+    data = data.JSON.stringify();
+    this.searchURL = this.dominioURL + 
+    this.http.post
   }
 
 

@@ -9,6 +9,7 @@
 
 <body>
     <div class="header">
+
       <!--Barra nav-->
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
           <img src="https://pbs.twimg.com/profile_images/504352126412136448/7rLwIVFT_400x400.png" alt="UTN image" class="navbar-brand" width="50" height="50">
@@ -19,11 +20,17 @@
           <!-- Navbar content -->
           <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item" (click)="setOption(0)" [class.active]="option === 0"><a class="nav-link">Home</a></li>
+              <a routerLink="/home">Home</a>
+              <a routerLink="/searchMovies">Search</a>
+              <a routerLink="/now-playing">En cartelera</a>
+              <a routerLink="/popular">Populares</a>
+
+              <!--<li class="nav-item" (click)="setOption(0)" [class.active]="option === 0"><a class="nav-link">Home</a></li>
               <li class="nav-item" (click)="setOption(1)" [class.active]="option === 1"><a class="nav-link">Buscar</a></li>
               <li class="nav-item" (click)="setOption(2)" [class.active]="option === 2"><a class="nav-link">Cartelera</a></li>
-              <li class="nav-item" (click)="setOption(3)" [class.active]="option === 3"><a class="nav-link">Populares</a></li>
+              <li class="nav-item" (click)="setOption(3)" [class.active]="option === 3"><a class="nav-link">Populares</a></li>-->
             </ul>
+            <router-outlet></router-outlet>
           </div>
       </nav> 
     </div>

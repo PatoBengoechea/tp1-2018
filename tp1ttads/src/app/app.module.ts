@@ -12,6 +12,7 @@ import { popularMoviesComponent } from './popular-movies/popular-movies.componen
 import { SearchFilmComponent } from './search-film/search-film.component';
 
 import { ApiThemoviedbService } from './api-themoviedb.service';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ApiThemoviedbService } from './api-themoviedb.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [ApiThemoviedbService],
   bootstrap: [AppComponent]
