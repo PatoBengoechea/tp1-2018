@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalDetallesComponent } from './modal-detalles.component';
+import { SearchFilmComponent } from './search-film.component';
 
-describe('ModalDetallesComponent', () => {
-  let component: ModalDetallesComponent;
-  let fixture: ComponentFixture<ModalDetallesComponent>;
+describe('SearchFilmComponent', () => {
+  let component: SearchFilmComponent;
+  let fixture: ComponentFixture<SearchFilmComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalDetallesComponent ]
+      declarations: [ SearchFilmComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalDetallesComponent);
+    fixture = TestBed.createComponent(SearchFilmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
