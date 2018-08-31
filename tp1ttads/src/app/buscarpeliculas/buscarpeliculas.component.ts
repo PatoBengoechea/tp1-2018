@@ -10,11 +10,7 @@ export class BuscarpeliculasComponent implements OnInit {
 
   private films: any = {};
   private filmDetails;
-<<<<<<< HEAD
-  private imgBaseURL = "http://image.tmdb.org/t/p/";
-=======
   private imgurlbase = "https://image.tmdb.org/t/p/w185";
->>>>>>> e1325e8254a2eff14727d9dfa78ecdd930065dc7
 
   constructor(private service: ApiThemoviedbService) { }
 
