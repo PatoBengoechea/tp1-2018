@@ -18,7 +18,7 @@
     <div *ngIf="nowPlayingMovies.length" class="row">
         <div *ngFor="let npm of nowPlayingMovies" class="col-4">
             <div class="card">
-                <img class="card-img-top mx-auto d-block" src="{{ imgBaseUrl + imgPosterSize + npm.poster_path }}" alt="Poster de la película {{npm.title}}">
+                <img class="card-img-top mx-auto d-block" src="{{ imgBaseURL + imgPosterSize + npm.poster_path }}" alt="Poster de la película {{npm.title}}">
                 <div class="card-body">      
                     <h5 class="card-title text-center">{{ npm.title }}</h5>
                     <p class="card-text"><strong>Original title: </strong> {{ npm.original_title }}</p>

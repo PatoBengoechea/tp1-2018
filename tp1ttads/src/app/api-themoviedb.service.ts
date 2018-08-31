@@ -25,7 +25,8 @@ export class ApiThemoviedbService {
   }
   
   searchNowPlayingMovies() {
-    this.searchURL = this.dominioURL + "movie/now_playing?" + this.apiKey + "&language=en-US&page=1";
+    //STRING: https://api.themoviedb.org/3/movie/now_playing?api_key=afbc1995a41f72f35622f748d82068dc&language=en-US&page=1
+    this.searchURL = this.dominioURL + "/movie/now_playing?" + this.apiKey + this.language + "&page=1";
     return this.http.get(this.searchURL);
   }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiThemoviedbService } from '../api-themoviedb.service';
+import { Subscriber } from 'rxjs/Subscriber';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class NowPlayingMoviesComponent implements OnInit {
 
   private nowPlayingMovies: any = {};
   private dateToday: any;
-  private imgBaseURL = "http://image.tmdb.org/t/p/";
+  private imgBaseURL = "https://image.tmdb.org/t/p/";
   private imgPosterSize = "w780";
  
 
@@ -25,9 +26,9 @@ export class NowPlayingMoviesComponent implements OnInit {
   searchNowPlayingMovies(): void {
     // Busco peliculas populares
     this.service.searchNowPlayingMovies()
-      .subscribe(data => this.nowPlayingMovies = data);
-    // Get configuration para tener los datos de las imagenes
-    
-  }
+      .subscribe((data: any) => this.nowPlayingMovies = data.results); 
+      console.log(this.service);
+      console.log(this.nowPlayingMovies);
+    }
 
 }
