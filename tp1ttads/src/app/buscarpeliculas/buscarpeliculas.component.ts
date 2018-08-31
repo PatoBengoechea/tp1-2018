@@ -39,11 +39,13 @@ export class BuscarpeliculasComponent implements OnInit {
     this.idToSearch = id;
   } 
   */
-
+ 
   buscarDetalles(id: any){
     this.http.get('https://api.themoviedb.org/3/movie/11?api_key=afbc1995a41f72f35622f748d82068dc&language=en-US').subscribe(
-      (response:any) => this.film = response.results
-    );
+      (response:any) => {
+        this.film = response.results;
+        console.log(this.film)
+      });
     /*
     this.http.get('https://api.themoviedb.org/3/movie/' + id + '?api_key=afbc1995a41f72f35622f748d82068dc&language=en-US').subscribe(
       (response:any) => this.film = response.results
