@@ -7,7 +7,7 @@ export class ApiThemoviedbService {
 
   private dominioURL = "https://api.themoviedb.org/3";
   private apiKey = "api_key=afbc1995a41f72f35622f748d82068dc";
-  private language = "&language=en-US";
+  private language = "&language=en-US&";
   private searchURL: string;
 
   constructor(private http: HttpClient) { }
