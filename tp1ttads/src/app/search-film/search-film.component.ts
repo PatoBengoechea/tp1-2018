@@ -26,11 +26,11 @@ export class SearchFilmComponent implements OnInit {
       
   }
 
-rateMovie(input){
-  let vote: number;
-  vote=input;
+  rateMovie(input){
+    let vote: number;
+    vote=input;
 
-}
+  }
   
 
 }

@@ -1,20 +1,19 @@
 Planificacion:
 Fecha entrega estimada: 1/09/2017
 
-Primer Reunion 6/07/18
-Creacion del repositorio
-Eleccion de API: Movie Data Base
-Obtencion de la key de la API Movide DataBase
+Primer reunión - 6/07/18
+    Creacion del repositorio.
+    Eleccion de API: Movie Data Base.
+    Obtencion de la key de la API Movide DataBase.
 
-Para la proxima Reunion realizar las siguientes tareas:
+    Para la próxima Reunion realizar las siguientes tareas:
 
-Nico Scandolo: componenete de peliculas mejor puntuadas.
+        Nico Scandolo: componenete de peliculas populares.
+        Nico Gomez: componenete de peliculas en cartelera.
+        Pato Bengoechea: componente para buscar peliculas.
 
-Nico Gomez: componenete de peliculas en cartelera.
+Segunda reunión - 14/08/18
 
-Pato Bengoechea: componente de peliculas populares.
-
-Segunda Reunion 18/07/18
 En esta reunion se corrigieron los errores menores que quedaron en los componentes. Y se asignaron
 las tareas para la proxima reunion.
 
@@ -31,8 +30,9 @@ Fecha entrega estimada: 15/09/2017
 
 Tercera Reunion 30/07/18
 Debido a los paros se postergo la fecha de entrega estimada.
-En esta reunion se arreglaron errores del service y de los componentes. Ademas se comenzo a hacer routing,
-nos encontramos con el problema de que para rankear un componente necesitamos un Session ID
+Revisión del TP acorde a las consignas pedidas.
+Charla sobre el feedback dado por el profesor en la consulta.
+Integración de routing al TP.
 
 
 Para la proxima Reunion realizar las siguientes tareas:

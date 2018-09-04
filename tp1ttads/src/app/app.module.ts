@@ -2,16 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-
+// Components
 import { AppComponent } from './app.component';
 import { BuscarpeliculasComponent } from './buscarpeliculas/buscarpeliculas.component';
-import { HttpClient, HttpClientModule } from '../../node_modules/@angular/common/http';
+import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { NowPlayingMoviesComponent } from './now-playing-movies/now-playing-movies.component';
 import { HomeComponent } from './home/home.component';
 import { popularMoviesComponent } from './popular-movies/popular-movies.component';
 import { SearchFilmComponent } from './search-film/search-film.component';
 
+// Service
 import { ApiThemoviedbService } from './api-themoviedb.service';
+
+// Routing
 import { AppRoutingModule } from './/app-routing.module';
 
 
@@ -33,4 +36,5 @@ import { AppRoutingModule } from './/app-routing.module';
   providers: [ApiThemoviedbService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
