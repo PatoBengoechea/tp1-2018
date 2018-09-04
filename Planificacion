@@ -13,3 +13,32 @@ Nico Scandolo: componenete de peliculas mejor puntuadas.
 Nico Gomez: componenete de peliculas en cartelera.
 
 Pato Bengoechea: componente de peliculas populares.
+
+Segunda Reunion 18/07/18
+En esta reunion se corrigieron los errores menores que quedaron en los componentes. Y se asignaron
+las tareas para la proxima reunion.
+
+Para la proxima Reunion realizar las siguientes tareas:
+
+Nico Scandolo: Generar Web Service
+
+Nico Gomez: Generar Web Service
+
+Pato Bengoechea: Realizar componente para rankear pelicula
+
+Planificacion:
+Fecha entrega estimada: 15/09/2017
+
+Tercera Reunion 30/07/18
+Debido a los paros se postergo la fecha de entrega estimada.
+En esta reunion se arreglaron errores del service y de los componentes. Ademas se comenzo a hacer routing,
+nos encontramos con el problema de que para rankear un componente necesitamos un Session ID
+
+
+Para la proxima Reunion realizar las siguientes tareas:
+
+Nico Scandolo: Generar un Session ID
+
+Nico Gomez: Terminar Routing
+
+Pato Bengoechea: Terminar componente para rankear pelicula
