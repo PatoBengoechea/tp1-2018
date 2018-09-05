@@ -8,6 +8,8 @@ export class ApiThemoviedbService {
   private dominioURL = "https://api.themoviedb.org/3";
   private apiKey = "api_key=afbc1995a41f72f35622f748d82068dc";
   private language = "&language=en-US&";
+  private autenticate = "https://www.themoviedb.org/authenticate/";
+  private session = "https://www.themoviedb.org/authentication/session/new?";
   private searchURL: string;
 
   constructor(private http: HttpClient) { }
@@ -33,11 +35,21 @@ export class ApiThemoviedbService {
   }
 
   rateAMovie(id: number, vote: number){
-    let data:any ={};
-    data.value=vote;
-    data = data.JSON.stringify();
-    this.searchURL = this.dominioURL + 
-    this.http.post
+    let response_token;
+    let response_session;
+    let body_rate: any = {};
+    let body_session: any = {};
+    //Create a new request token
+    response_token = this.http.get(this.dominioURL + "authentication/token/new?" + this.apiKey);
+    //Autorizhe the request token
+    this.http.get(this.autenticate + response_token.token_request + "/allow");
+    //create a new session id
+    body_session.request_token = response_token;
+    response_session = this.http.post(this.session + this.apiKey, body_session);
+    //Rate the movie
+    body_rate.value = vote;
+    this.searchURL = (this.dominioURL + "/movie/" + id + "/rating?" + this.apiKey);
+    this.http.post(this.searchURL, body_rate);
   }
 
 

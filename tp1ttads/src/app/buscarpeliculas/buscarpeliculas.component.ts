@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ApiThemoviedbService } from '../api-themoviedb.service';
 
 @Component({
@@ -11,6 +11,7 @@ export class BuscarpeliculasComponent implements OnInit {
   private films: any = {};
   private filmDetails;
   private imgurlbase = "https://image.tmdb.org/t/p/w185";
+  @Output() lookDetails = new EventEmitter<any>();
 
   constructor(private service: ApiThemoviedbService) { }
 
@@ -22,7 +23,8 @@ export class BuscarpeliculasComponent implements OnInit {
     console.log(this.service);
   }
 
-  searchFilmDetails(id: number): void{
-    this.service.searchFilmDetails(id).subscribe((data: any) => this.filmDetails = data.results);
+  searchFilmDetails(event, id: number): void{
+    this.lookDetails.emit(id);
+    //this.service.searchFilmDetails(id).subscribe((data: any) => this.filmDetails = data.results);
   }
 }

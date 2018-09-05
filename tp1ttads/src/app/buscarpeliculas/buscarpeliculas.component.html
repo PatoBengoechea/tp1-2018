@@ -24,7 +24,7 @@
           <p class="card-text">Release Date: {{ f.release_date | uppercase }}</p>
           
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-outline-info btn-block">
+          <button type="button" class="btn btn-outline-info btn-block" (click)="searchFilmDetails($event, f.id)">
             Go to the Film
           </button>
           
