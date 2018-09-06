@@ -36,21 +36,35 @@ export class ApiThemoviedbService {
   }
   //Votar una película
   rateAMovie(id: number, vote: number){
-    let response_token;
-    let response_session;
+    //let response_token;
+    //let response_session;
+    //let body_session: any = {};
+    let guest_session_id;
     let body_rate: any = {};
-    let body_session: any = {};
+
+    // Solicitar guest_session_id --> Se eliminará al cabo de 24hs sin uso
+    // https://api.themoviedb.org/3/authentication/guest_session/new?api_key=afbc1995a41f72f35622f748d82068dc
+    this.searchURL = this.dominioURL + "/authentication/guest_session/new?" + this.apiKey;
+    this.http.get(this.searchURL).subscribe(data => guest_session_id = data);
+
+    //Rate the movie (con guest_sesion_id)
+    //https://api.themoviedb.org/3/movie/11/rating?api_key=afbc1995a41f72f35622f748d82068dc&guest_session_id=<<guest_session_id>>
+    body_rate.value = vote;
+    this.searchURL = this.dominioURL + "/movie/" + id + "/rating?" + this.apiKey + "&guest_session_id=" + guest_session_id;
+    this.http.post(this.searchURL, body_rate);
+
+    /*
     //Create a new request token
+    https://api.themoviedb.org/3/authentication/token/new?api_key=afbc1995a41f72f35622f748d82068dc
     response_token = this.http.get(this.dominioURL + "authentication/token/new?" + this.apiKey);
+    
     //Autorizhe the request token
     this.http.get(this.autenticate + response_token.token_request + "/allow");
     //create a new session id
     body_session.request_token = response_token;
     response_session = this.http.post(this.session + this.apiKey, body_session);
-    //Rate the movie
-    body_rate.value = vote;
-    this.searchURL = (this.dominioURL + "/movie/" + id + "/rating?" + this.apiKey);
-    this.http.post(this.searchURL, body_rate);
+    */
+  
   }
 
 }
