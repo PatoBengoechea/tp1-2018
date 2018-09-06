@@ -20,7 +20,7 @@ export class NowPlayingMoviesComponent implements OnInit {
 
   ngOnInit() {
     this.searchNowPlayingMovies();
-    this.dateToday = Date.now().toString();
+    this.dateToday = (new Date()).toString();
    }
 
   searchNowPlayingMovies(): void {

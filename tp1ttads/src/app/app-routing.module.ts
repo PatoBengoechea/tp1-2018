@@ -14,7 +14,7 @@ const routes: Routes=[
   {path: 'popular', component: popularMoviesComponent},
   {path: 'now-playing', component: NowPlayingMoviesComponent},
   {path: 'search-movies', component: BuscarpeliculasComponent},
-  {path: 'search-details/:id', component: SearchFilmComponent}
+  {path: 'search-details/:query', component: SearchFilmComponent}
 ]
 
 @NgModule({

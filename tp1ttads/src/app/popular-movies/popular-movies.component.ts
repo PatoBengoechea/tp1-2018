@@ -8,7 +8,7 @@ import { ApiThemoviedbService } from '../api-themoviedb.service';
 })
 export class popularMoviesComponent implements OnInit {
 
-  private popularMovies: any = {};
+  private popularMovies: any = [];
   private imgBaseUrl = "https://image.tmdb.org/t/p/";
   private imgPosterSize = "w780";
  
@@ -21,6 +21,8 @@ export class popularMoviesComponent implements OnInit {
 
   searchpopularMovies(): void {
     this.service.searchPopularMovies().subscribe((response:any)=> this.popularMovies = response.results);
+    this.service.searchPopularMovies().subscribe((response:any)=> console.log(response.results));
+
   }
 
 }
