@@ -2,6 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+// Service
+import { ApiThemoviedbService } from './api-themoviedb.service';
+
+// Routing
+import { AppRoutingModule } from './/app-routing.module'; 
+
 // Components
 import { AppComponent } from './app.component';
 import { BuscarpeliculasComponent } from './buscarpeliculas/buscarpeliculas.component';
@@ -10,14 +16,7 @@ import { NowPlayingMoviesComponent } from './now-playing-movies/now-playing-movi
 import { HomeComponent } from './home/home.component';
 import { popularMoviesComponent } from './popular-movies/popular-movies.component';
 import { SearchFilmComponent } from './search-film/search-film.component';
-
-// Service
-import { ApiThemoviedbService } from './api-themoviedb.service';
-
-// Routing
-import { AppRoutingModule } from './/app-routing.module';
 import { MovieComponent } from './movie/movie.component';
-
 
 @NgModule({
   declarations: [

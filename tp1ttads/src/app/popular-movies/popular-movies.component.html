@@ -9,24 +9,11 @@
 
 <body>
   <!-- Jumbotron -->
-  <div *ngIf="popularMovies.length" class="jumbotron text-center">
+  <div class="jumbotron text-center">
      <h1 class="display-4">Películas Populares</h1>
-     <p class="lead">Películas Populares del momento</p>
  </div>
  <!-- Fin Jumbotron-->
- <!-- Películas con card-->
- <div class="row">
-     <div *ngFor="let npm of popularMovies" class="col-4">
-         <div class="card">
-             <img class="card-img-top mx-auto d-block" src="{{ imgBaseUrl + imgPosterSize + npm.poster_path }}" alt="Poster de la película {{npm.title}}">
-             <div class="card-body">      
-                 <h5 class="card-title text-center">{{ npm.title }}</h5>
-                 <p class="card-text"><strong>Original title: </strong> {{ npm.original_title }}</p>
-                 <p class="card-text"><strong>Popularity: </strong> {{ npm.popularity }}</p>
-                 <p class="card-text"><strong>Release date: </strong> {{ npm.release_date }}</p>
-                 <button class="btn btn-info btn-block">DETAILS</button>
-             </div>     
-         </div>     
-     </div>
- </div>
- <!-- Fin Películas -->
+ <!-- Componente de películas -->
+ <div *ngIf="popularMovies.length" class="row" >
+    <app-movie *ngFor="let movie of popularMovies" [movie]="movie" class="col-4"></app-movie>
+</div>

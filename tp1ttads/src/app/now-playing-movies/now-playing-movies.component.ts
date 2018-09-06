@@ -10,25 +10,21 @@ import { Subscriber } from 'rxjs/Subscriber';
 })
 export class NowPlayingMoviesComponent implements OnInit {
 
-  private nowPlayingMovies: any = {};
+  private nowPlayingMovies: any = [];
   private dateToday: any;
-  private imgBaseURL = "https://image.tmdb.org/t/p/";
-  private imgPosterSize = "w780";
- 
 
   constructor(private service: ApiThemoviedbService) { }
 
   ngOnInit() {
     this.searchNowPlayingMovies();
-    this.dateToday = (new Date()).toString();
+    this.dateToday = new Date().toString();
    }
 
   searchNowPlayingMovies(): void {
-    // Busco peliculas populares
     this.service.searchNowPlayingMovies()
       .subscribe((data: any) => this.nowPlayingMovies = data.results); 
-      console.log(this.service);
-      console.log(this.nowPlayingMovies);
+      //console.log(this.service);
+      //console.log(this.nowPlayingMovies);
     }
 
 }

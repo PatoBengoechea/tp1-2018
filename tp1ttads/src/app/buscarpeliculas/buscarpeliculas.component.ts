@@ -8,7 +8,7 @@ import { ApiThemoviedbService } from '../api-themoviedb.service';
 })
 export class BuscarpeliculasComponent implements OnInit {
 
-  private films: any = {};
+  private films: any = [];
   private filmDetails;
   private imgurlbase = "https://image.tmdb.org/t/p/w185";
   @Output() lookDetails = new EventEmitter<any>();
@@ -18,9 +18,9 @@ export class BuscarpeliculasComponent implements OnInit {
   ngOnInit() {
   }
 
-  searchFilm(filmToSearch: string): void{
-    this.service.searchFilm(filmToSearch).subscribe((data: any) => this.films = data.results);
-    console.log(this.service);
+  searchFilm(nameToSearch: string): void{
+    this.service.searchFilms(nameToSearch).subscribe((data: any) => this.films = data.results);
+    //this.service.searchFilms(nameToSearch).subscribe((data: any) => console.log(data.results));
   }
 
   searchFilmDetails(event, id: number): void{

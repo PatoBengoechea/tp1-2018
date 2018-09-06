@@ -14,26 +14,27 @@ export class ApiThemoviedbService {
 
   constructor(private http: HttpClient) { }
 
-  searchFilm(film: string) {
+  //Buscar películas por nombre
+  searchFilms(film: string) {
     this.searchURL = this.dominioURL + "/search/movie?" + this.apiKey + this.language + "&query=" + film + "&page=1&include_adult=false";
     return this.http.get(this.searchURL);
   }
-
+  //Buscar detalles de una película 
   searchFilmDetails(id: number) {
     this.searchURL = this.dominioURL + id + "?" + this.apiKey + this.language;
     return this.http.get(this.searchURL);
   }
-  
+  //Buscar películas en cartelera
   searchNowPlayingMovies() {
     this.searchURL = this.dominioURL + "/movie/now_playing?" + this.apiKey + this.language + "&page=1";
     return this.http.get(this.searchURL);
   }
-
+  //Buscar películas populares
   searchPopularMovies() {
     this.searchURL = this.dominioURL + "/movie/popular?page=1" + this.language + this.apiKey;
     return this.http.get(this.searchURL);
   }
-
+  //Votar una película
   rateAMovie(id: number, vote: number){
     let response_token;
     let response_session;
@@ -51,6 +52,5 @@ export class ApiThemoviedbService {
     this.searchURL = (this.dominioURL + "/movie/" + id + "/rating?" + this.apiKey);
     this.http.post(this.searchURL, body_rate);
   }
-
 
 }
