@@ -16,6 +16,7 @@ import { ApiThemoviedbService } from './api-themoviedb.service';
 
 // Routing
 import { AppRoutingModule } from './/app-routing.module';
+import { MovieComponent } from './movie/movie.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AppRoutingModule } from './/app-routing.module';
     HomeComponent,
     popularMoviesComponent,
     SearchFilmComponent,
+    MovieComponent,
   ],
   imports: [
     BrowserModule,

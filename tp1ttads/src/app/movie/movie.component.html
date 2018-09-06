@@ -1,0 +1,10 @@
+<div class="card">
+  <img class="card-img-top mx-auto d-block" src="{{ imgBaseURL + imgPosterSize + movie.poster_path }}" alt="Poster de la película {{movie.title}}">
+  <div class="card-body">      
+      <h5 class="card-title text-center">{{ movie.title }}</h5>
+      <p class="card-text"><strong>Original title: </strong> {{ movie.original_title }}</p>
+      <p class="card-text"><strong>Popularity: </strong> {{ movie.popularity }}</p>
+      <p class="card-text"><strong>Release date: </strong> {{ movie.release_date }}</p>
+      <button class="btn btn-info btn-block">DETAILS</button>
+  </div>     
+</div>     
