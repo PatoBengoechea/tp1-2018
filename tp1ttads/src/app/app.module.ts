@@ -15,8 +15,8 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { NowPlayingMoviesComponent } from './now-playing-movies/now-playing-movies.component';
 import { HomeComponent } from './home/home.component';
 import { popularMoviesComponent } from './popular-movies/popular-movies.component';
-import { SearchFilmComponent } from './search-film/search-film.component';
 import { MovieComponent } from './movie/movie.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +25,8 @@ import { MovieComponent } from './movie/movie.component';
     NowPlayingMoviesComponent,
     HomeComponent,
     popularMoviesComponent,
-    SearchFilmComponent,
     MovieComponent,
+    MovieDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,7 @@
         <p class="card-text"><strong>Original title: </strong> {{ movie.original_title }}</p>
         <p class="card-text"><strong>Popularity: </strong> {{ movie.popularity }}</p>
         <p class="card-text"><strong>Release date: </strong> {{ movie.release_date }}</p>
-        <button class="btn btn-info btn-block">DETAILS</button>
+        <button class="btn btn-info btn-block nav-link" routerLink="movie-details/{{movie.id}}">DETAILS</button>
     </div>     
   </div>     
 </div>

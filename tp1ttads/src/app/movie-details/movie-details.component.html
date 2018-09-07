@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <img class="img-fluid" src="{{ imgBaseURL + imgPosterSize + movie.poster_path }}" alt="Poster de la película {{movie.title}}">
+        </div>
+        <div class="card border-0 col-8">
+        <div class="card-body">
+          <h1 class="card-title">{{ movie.title }}</h1>
+          <p class="card-text"><strong>Release Date: </strong>{{ movie.release_date}}</p>
+          <p class="card-text"><strong>Overview: </strong>{{ movie.overview }}</p>
+          <p class="card-text"><strong>Original Title: </strong>{{ movie.original_title }}</p>
+          <p class="card-text"><strong>Original Language: </strong>{{ movie.original_language }}</p>
+          <p class="card-text"><strong>Genres:</strong></p>
+          <ul *ngFor="let g of movie.genres">
+            <li>{{ g.name }}</li>
+          </ul>
+          <p class="card-text"><strong>Popularity: </strong>{{ movie.popularity }}</p>
+          <button class="btn btn-success" (click)="rateMovie()">Vote</button>
+          <button class="btn btn-info" (click)="goBack()">Go Back</button>
+        </div>
+    </div>
+  </div>
+</div>
