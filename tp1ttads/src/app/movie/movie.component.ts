@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+
 
 
 @Component({
@@ -12,8 +14,11 @@ export class MovieComponent implements OnInit {
   private imgBaseURL = "https://image.tmdb.org/t/p/";
   private imgPosterSize = "w780";
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() { }
 
+  search(id:number){
+    this.route.navigate(['movie-details', id])
+  }
 }

@@ -13,7 +13,7 @@ export class ApiThemoviedbService {
   private searchURL: string;
   private guest_session: any;
   
-
+  //https://api.themoviedb.org/3
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class ApiThemoviedbService {
 
   // Buscar detalles de una película 
   getMovieDetails(id: number) {
-    this.searchURL = this.dominioURL + id + "?" + this.apiKey + this.language;
+    this.searchURL = this.dominioURL + "/movie/"  + id + "?" + this.apiKey + this.language;
     return this.http.get(this.searchURL);
   }
 

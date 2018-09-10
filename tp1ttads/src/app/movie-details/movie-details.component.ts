@@ -27,10 +27,10 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   getMovieDetails(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = +this.route.snapshot.paramMap.get('query');
     this.service.getMovieDetails(id)
       .subscribe(data => this.movie = data);
-    this.service.getMovieDetails(id).subscribe(data => console.log(data));
+    //this.service.getMovieDetails(id).subscribe(data => console.log(data));
   }
 
   rateMovie(vote: number): void{
