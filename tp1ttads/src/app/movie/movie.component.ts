@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+// Routing
 import {ActivatedRoute, Router} from "@angular/router";
 
 
@@ -18,7 +19,8 @@ export class MovieComponent implements OnInit {
 
   ngOnInit() { }
 
-  search(id:number){
+  search(id: number){
     this.route.navigate(['movie-details', id])
   }
+  
 }

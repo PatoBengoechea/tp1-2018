@@ -1,5 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+// Servicio
 import { ApiThemoviedbService } from '../api-themoviedb.service';
+//Routing
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buscarpeliculas',
@@ -13,7 +16,10 @@ export class BuscarpeliculasComponent implements OnInit {
   private imgurlbase = "https://image.tmdb.org/t/p/w185";
   @Output() lookDetails = new EventEmitter<any>();
 
-  constructor(private service: ApiThemoviedbService) { }
+  constructor(
+    private service: ApiThemoviedbService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -23,8 +29,7 @@ export class BuscarpeliculasComponent implements OnInit {
     //this.service.searchFilms(nameToSearch).subscribe((data: any) => console.log(data.results));
   }
 
-  searchFilmDetails(event, id: number): void{
-    this.lookDetails.emit(id);
-    //this.service.searchFilmDetails(id).subscribe((data: any) => this.filmDetails = data.results);
+  search(id: number){
+    this.router.navigate(['movie-details', id]);
   }
 }

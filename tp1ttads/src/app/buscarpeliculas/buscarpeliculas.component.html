@@ -1,37 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Películas</title>
-</head>
-
-<body>
-
-  <div class="jumbotron text-center">
-      <input  [(ngModel)]="nameToSearch" class="form-control mr-sm-2" type="search" placeholder="Search a film" aria-label="Search" autofocus>
-      <button (click)="searchFilm(nameToSearch)" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </div>
-  <div class="card"> 
-
-    <ul class="films" *ngIf="films.length>0">
-      <li *ngFor="let f of films" class="card" >
-        <img *ngIf="f.backdrop_path" class="card-img-top" src="{{imgurlbase + f.backdrop_path}}" alt="Not found">
-        <div class="card-body">
-          <h5 class="card-title"><strong>{{ f.title }}</strong></h5>
-          <p class="card-text">Punctuation: {{ f.vote_average }}</p>
-          <p class="card-text">Release Date: {{ f.release_date | uppercase }}</p>
-          
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-outline-info btn-block" (click)="searchFilmDetails($event, f.id)">
-            Go to the Film
-          </button>
-          
-        </div>
-      </li>
-    </ul>  
-  </div>
-    
-</body>
-</html>
+<div class="jumbotron text-center">
+    <input  [(ngModel)]="nameToSearch" class="form-control mr-sm-2" type="search" placeholder="Search a film" aria-label="Search" autofocus>
+    <button (click)="searchFilm(nameToSearch)" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</div>
+<div class="card"> 
+  <ul class="films" *ngIf="films.length>0">
+    <li *ngFor="let f of films" class="card" >
+      <img *ngIf="f.backdrop_path" class="card-img-top" src="{{imgurlbase + f.backdrop_path}}" alt="Poster de la película {{ f.title }}">
+      <div class="card-body">
+        <h5 class="card-title"><strong>{{ f.title }}</strong></h5>
+        <p class="card-text">Punctuation: {{ f.vote_average }}</p>
+        <p class="card-text">Release Date: {{ f.release_date | uppercase }}</p>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-info btn-block" (click)="search(f.id)">
+          Go to the Film
+        </button> 
+      </div>
+    </li>
+  </ul>  
+</div>

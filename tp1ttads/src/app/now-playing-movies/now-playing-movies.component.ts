@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiThemoviedbService } from '../api-themoviedb.service';
-import { Subscriber } from 'rxjs/Subscriber';
-
 
 @Component({
   selector: 'app-now-playing-movies',
