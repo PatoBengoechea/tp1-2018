@@ -9,14 +9,16 @@ import { ApiThemoviedbService } from '../api-themoviedb.service';
 export class NowPlayingMoviesComponent implements OnInit {
 
   private nowPlayingMovies: any = [];
-  private dateToday: any;
+  private dateToday: string;
+  
 
   constructor(private service: ApiThemoviedbService) { }
 
   ngOnInit() {
+    let f = new Date();
     this.searchNowPlayingMovies();
-    this.dateToday = new Date().toString();
-   }
+    this.dateToday = f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
+  }
 
   searchNowPlayingMovies(): void {
     this.service.searchNowPlayingMovies()
