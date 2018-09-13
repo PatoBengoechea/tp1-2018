@@ -14,6 +14,7 @@
         <li>{{ g.name }}</li>
       </ul>
       <p class="card-text"><strong>Popularity: </strong>{{ movie.popularity }}</p>
+      <p class="card-text"><strong>Vote Count: </strong>{{ movie.vote_count }}</p>
       <button class="btn btn-info" (click)="goBack()">Go Back</button>
       <button data-toggle="collapse" data-target="#votos" class="btn btn-success">Vote</button>
       <div id="votos" class="collapse btn-group">

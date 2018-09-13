@@ -13,11 +13,16 @@ export class ApiThemoviedbService {
   private searchURL: string;
   private guest_session: any;
   
-  //https://api.themoviedb.org/3
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.guest_session = this.getGuestSession();    
+  }
 
-  ngOnInit() {
-    this.guest_session = this.getGuestSession();
+  // Obtener guest_session_id
+  getGuestSession(): any{
+    // Solicitar guest_session_id --> Se eliminará al cabo de 24hs sin uso
+    // https://api.themoviedb.org/3/authentication/guest_session/new?api_key=afbc1995a41f72f35622f748d82068dc
+    this.searchURL = this.dominioURL + "/authentication/guest_session/new?" + this.apiKey;
+    return this.http.get(this.searchURL);
   }
 
   // Buscar películas por nombre
@@ -41,14 +46,6 @@ export class ApiThemoviedbService {
   // Buscar películas populares
   searchPopularMovies() {
     this.searchURL = this.dominioURL + "/movie/popular?page=1" + this.language + this.apiKey;
-    return this.http.get(this.searchURL);
-  }
-
-  // Obtener guest_session_id
-  getGuestSession(): any{
-    // Solicitar guest_session_id --> Se eliminará al cabo de 24hs sin uso
-    // https://api.themoviedb.org/3/authentication/guest_session/new?api_key=afbc1995a41f72f35622f748d82068dc
-    this.searchURL = this.dominioURL + "/authentication/guest_session/new?" + this.apiKey;
     return this.http.get(this.searchURL);
   }
 

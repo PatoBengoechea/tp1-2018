@@ -1,69 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TP1 TTADS 2018</title>
-  </head>
-
-<body>
-    <div class="header">
-      <!--Barra nav-->
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <img src="https://pbs.twimg.com/profile_images/504352126412136448/7rLwIVFT_400x400.png" alt="UTN image" class="navbar-brand" width="50" height="50">
-        <!--Boton responsive de menú "hamburguesa"-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Navbar content -->
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav mr-auto">
-            <!-- Links anteriores sin routing
-            <li class="nav-item" (click)="setOption(0)" [class.active]="option === 0"><a class="nav-link" routerLink="/home">Home</a></li>
-            <li class="nav-item" (click)="setOption(1)" [class.active]="option === 1"><a class="nav-link" routerLink="/search-movies">Buscar</a></li>
-            <li class="nav-item" (click)="setOption(2)" [class.active]="option === 2"><a class="nav-link" routerLink="/now-playing">Cartelera</a></li>
-            <li class="nav-item" (click)="setOption(3)" [class.active]="option === 3"><a class="nav-link" routerLink="/popular">Populares</a></li>
-            -->
-            <!-- Links con routing -->
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/search-movies">Buscar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/now-playing">Cartelera</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/popular">Populares</a>
-            </li>-->
-          </ul>
-        </div>
-      </nav> 
+<div class="header">
+  <!--Barra nav-->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <img src="https://pbs.twimg.com/profile_images/504352126412136448/7rLwIVFT_400x400.png" alt="UTN image" class="navbar-brand" width="50" height="50">
+    <!--Boton responsive de menú "hamburguesa"-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Navbar content -->
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <!-- Links con routing -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/search-movies">Buscar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/now-playing">Cartelera</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/popular">Populares</a>
+        </li>
+      </ul>
     </div>
-
-    <div class="content mt-5">
-      <router-outlet></router-outlet>
-    </div>
-    
-    <!-- Sin routing
-    <div class="content mt-5" *ngIf="option === 0">
-      <app-home></app-home>
-    </div>
-
-    <div class="content mt-5" *ngIf="option === 1">
-      <app-buscarpeliculas></app-buscarpeliculas>
-    </div>
-
-    <div class="container mt-5" *ngIf="option === 2">
-      <app-now-playing-movies></app-now-playing-movies>
-    </div>
-    <div class="container mt-5" *ngIf="option === 3">
-      <app-popular-movies></app-popular-movies>
-    </div>
-    -->
-
-  </body>
-</html>
-
+  </nav> 
+</div>
+<div class="content mt-5">
+  <router-outlet></router-outlet>
+</div>
