@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 })
 export class MovieDetailsComponent implements OnInit {
 
-  @Input() movie;
+  @Input() movie: any = {};
   private imgBaseURL = "https://image.tmdb.org/t/p/";
   private imgPosterSize = "w780";
 
@@ -36,7 +36,12 @@ export class MovieDetailsComponent implements OnInit {
   rateMovie(vote: number): void{
     //const id = +this.route.snapshot.paramMap.get('id');
     //this.service.rateMovie(id, vote);
-    this.service.rateMovie(this.movie.id, vote);
+    this.service.rateMovie(this.movie.id, vote).subscribe( (response) => {
+
+    }, 
+    (error) => {
+
+    });
   }
 
   // Method that navigates backward one step in the browser's history stack using the Location service.

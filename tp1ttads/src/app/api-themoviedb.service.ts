@@ -14,7 +14,7 @@ export class ApiThemoviedbService {
   private guest_session: any;
   
   constructor(private http: HttpClient) { 
-    this.guest_session = this.getGuestSession();    
+   this.getGuestSession();    
   }
 
   // Obtener guest_session_id
@@ -22,7 +22,7 @@ export class ApiThemoviedbService {
     // Solicitar guest_session_id --> Se eliminará al cabo de 24hs sin uso
     // https://api.themoviedb.org/3/authentication/guest_session/new?api_key=afbc1995a41f72f35622f748d82068dc
     this.searchURL = this.dominioURL + "/authentication/guest_session/new?" + this.apiKey;
-    return this.http.get(this.searchURL);
+    this.http.get(this.searchURL).subscribe( (response) => this.guest_session = response);
   }
 
   // Buscar películas por nombre
@@ -56,8 +56,8 @@ export class ApiThemoviedbService {
     // Rate the movie (con guest_sesion_id)
     // https://api.themoviedb.org/3/movie/{movie_id}/rating?api_key=afbc1995a41f72f35622f748d82068dc&guest_session_id=<<guest_session_id>>
     body_rate.value = vote;
-    this.searchURL = this.dominioURL + "/movie/" + id + "/rating?" + this.apiKey + "&guest_session_id=" + this.guest_session.guest_sesion_id;
-    this.http.post(this.searchURL, body_rate);
+    this.searchURL = this.dominioURL + "/movie/" + id + "/rating?" + this.apiKey + "&guest_session_id=" + this.guest_session.guest_session_id;
+    return this.http.post(this.searchURL, body_rate);
 
 
     /* Sin guest_session_id
