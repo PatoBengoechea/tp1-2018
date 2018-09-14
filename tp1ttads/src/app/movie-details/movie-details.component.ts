@@ -15,6 +15,7 @@ export class MovieDetailsComponent implements OnInit {
   @Input() movie: any = {};
   private imgBaseURL = "https://image.tmdb.org/t/p/";
   private imgPosterSize = "w780";
+  private message;
 
   constructor(
     private service: ApiThemoviedbService,
@@ -37,10 +38,10 @@ export class MovieDetailsComponent implements OnInit {
     //const id = +this.route.snapshot.paramMap.get('id');
     //this.service.rateMovie(id, vote);
     this.service.rateMovie(this.movie.id, vote).subscribe( (response) => {
-
+      this.message = "Thanks for voting";
     }, 
     (error) => {
-
+      this.message = "Error, try later";
     });
   }
 
